@@ -429,11 +429,17 @@ function getLatestVisualStudioWithDesktopWorkloadVersion() {
 
 $vcpkg_root_set_by_this_script = $false
 
+
 if ((Test-Path env:VCPKG_ROOT) -and $UseVCPKG) {
   $vcpkg_path = "$env:VCPKG_ROOT"
   Write-Host "Found vcpkg in VCPKG_ROOT: $vcpkg_path"
   $AdditionalBuildSetup = $AdditionalBuildSetup + " -DENABLE_VCPKG_INTEGRATION:BOOL=ON"
 }
+#if ((Test-Path env:VCPKG_ROOT) -and $UseVCPKG) {
+#  $vcpkg_path = "$env:VCPKG_ROOT"
+#  Write-Host "Found vcpkg in VCPKG_ROOT: $vcpkg_path"
+#  $AdditionalBuildSetup = $AdditionalBuildSetup + " -DENABLE_VCPKG_INTEGRATION:BOOL=ON"
+#}
 elseif ((Test-Path "${env:WORKSPACE}/vcpkg") -and $UseVCPKG) {
   $vcpkg_path = "${env:WORKSPACE}/vcpkg"
   $env:VCPKG_ROOT = "${env:WORKSPACE}/vcpkg"
@@ -708,7 +714,7 @@ else {
   $proc.WaitForExit()
   $exitCode = $proc.ExitCode
   if (-Not ($exitCode -eq 0)) {
-    MyThrow("Config failed! Exited with error code $exitCode.")
+    MyThrow("'Config failed! Exited with error code $exitCode.")
   }
   Write-Host "Building CMake project" -ForegroundColor Green
   $proc = Start-Process -NoNewWindow -PassThru -FilePath $CMAKE_EXE -ArgumentList "--build . ${selectConfig} --parallel ${NumberOfBuildWorkers} --target install"
@@ -716,7 +722,7 @@ else {
   $proc.WaitForExit()
   $exitCode = $proc.ExitCode
   if (-Not ($exitCode -eq 0)) {
-    MyThrow("Config failed! Exited with error code $exitCode.")
+    MyThrow("Building failed! Exited with error code $exitCode.")
   }
   Remove-Item -Force -ErrorAction SilentlyContinue DarknetConfig.cmake
   Remove-Item -Force -ErrorAction SilentlyContinue DarknetConfigVersion.cmake

@@ -1,0 +1,69 @@
+Warning: The following VS instances are excluded because the English language pack is unavailable.
+    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community
+    C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools
+Please install the English language pack.
+Detecting compiler hash for triplet x64-windows...
+The following packages will be built and installed:
+    opencv[contrib,core,cuda,dnn,ffmpeg,jpeg,png,quirc,tiff,webp]:x64-windows -> 4.5.2
+  * opencv4[contrib,core,cuda,dnn,ffmpeg,jpeg,png,quirc,tiff,webp]:x64-windows -> 4.5.2
+Additional packages (*) will be modified to complete this operation.
+Could not locate cached archive: C:\Users\User\AppData\Local\vcpkg\archives\0e\0eae86d813ce5ec9d581d3ef05047c7a86233f2277e40f56b57c47e1a323dbd2.zip
+Could not locate cached archive: C:\Users\User\AppData\Local\vcpkg\archives\da\da7a08ac0b621edb6bf20250f02288a3216f1f5f87e47859262f9b19fbf0331c.zip
+Starting package 1/2: opencv4:x64-windows
+Building package opencv4[contrib,core,cuda,dnn,ffmpeg,jpeg,png,quirc,tiff,webp]:x64-windows...
+-- Using F:/workspace/vcpkg/downloads/opencv-opencv-4.5.2.tar.gz
+-- Cleaning sources at F:/workspace/vcpkg/buildtrees/opencv4/src/4.5.2-755f235ba0.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source F:/workspace/vcpkg/downloads/opencv-opencv-4.5.2.tar.gz
+-- Applying patch 0001-disable-downloading.patch
+-- Applying patch 0002-install-options.patch
+-- Applying patch 0003-force-package-requirements.patch
+-- Applying patch 0004-fix-policy-CMP0057.patch
+-- Applying patch 0005-fix-eigen.patch
+-- Applying patch 0006-fix-uwp.patch
+-- Applying patch 0008-devendor-quirc.patch
+-- Applying patch 0009-fix-qt-integration.patch
+-- Using source at F:/workspace/vcpkg/buildtrees/opencv4/src/4.5.2-755f235ba0.clean
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/tiny_dnn/adb1c512e09ca2c7a6faef36f9c53e59-v1.0.0a3.tar.gz
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/nvidia_optical_flow/ca5acedee6cb45d0ec610a6732de5c15-79c6cee80a2df9a196f20afd6b598a9810964c32.zip
+-- Using F:/workspace/vcpkg/downloads/opencv-opencv_contrib-4.5.2.tar.gz
+-- Cleaning sources at F:/workspace/vcpkg/buildtrees/opencv4/src/4.5.2-58c4f07550.clean. Use --editable to skip cleaning for the packages you specify.
+-- Extracting source F:/workspace/vcpkg/downloads/opencv-opencv_contrib-4.5.2.tar.gz
+-- Applying patch 0007-fix-hdf5.patch
+-- Using source at F:/workspace/vcpkg/buildtrees/opencv4/src/4.5.2-58c4f07550.clean
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/wechat_qrcode/238e2b2d6f3c18d6c3a30de0c31e23cf-detect.caffemodel
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/wechat_qrcode/cbfcd60361a73beb8c583eea7e8e6664-sr.caffemodel
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/wechat_qrcode/6fb4976b32695f9f5c6305c19f12537d-detect.prototxt
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/wechat_qrcode/69db99927a70df953b471daaba03fbef-sr.prototxt
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/0ea90e7a8f3f7876d450e4149c97c74f-boostdesc_bgm.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/232c966b13651bd0e46a1497b0852191-boostdesc_bgm_bi.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/324426a24fa56ad9c5b8e3e0b3e5303e-boostdesc_bgm_hd.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/202e1b3e9fec871b04da31f7f016679f-boostdesc_binboost_064.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/98ea99d399965c03d555cef3ea502a0b-boostdesc_binboost_128.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/e6dcfa9f647779eb1ce446a8d759b6ea-boostdesc_binboost_256.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/boostdesc/0ae0675534aa318d9668f2a179c2a052-boostdesc_lbgm.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/vgg/e8d0dcd54d1bcfdc29203d011a797179-vgg_generated_48.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/vgg/7126a5d9a8884ebca5aea5d63d677225-vgg_generated_64.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/vgg/7cd47228edec52b6d82f46511af325c5-vgg_generated_80.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/xfeatures2d/vgg/151805e03568c9f490a5e3a872777b75-vgg_generated_120.i
+-- Using F:/workspace/vcpkg/downloads/opencv-cache/data/7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
+-- Configuring x64-windows
+CMake Error at scripts/cmake/vcpkg_execute_required_process.cmake:127 (message):
+    Command failed: ninja -v
+    Working Directory: F:/workspace/vcpkg/buildtrees/opencv4/x64-windows-rel/vcpkg-parallel-configure
+    Error code: 1
+    See logs for more information:
+      F:\workspace\vcpkg\buildtrees\opencv4\config-x64-windows-out.log
+
+Call Stack (most recent call first):
+  scripts/cmake/vcpkg_configure_cmake.cmake:345 (vcpkg_execute_required_process)
+  ports/opencv4/portfile.cmake:312 (vcpkg_configure_cmake)
+  scripts/ports.cmake:141 (include)
+
+
+Error: Building package opencv4:x64-windows failed with: BUILD_FAILED
+Please ensure you're using the latest portfiles with `.\vcpkg update`, then
+submit an issue at https://github.com/Microsoft/vcpkg/issues including:
+  Package: opencv4:x64-windows
+  Vcpkg version: 2021-07-26-9425cf5f512f242c0bcbabac31f08832825aee81
+
+Additionally, attach any relevant sections from the log files above.

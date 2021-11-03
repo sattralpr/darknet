@@ -2378,11 +2378,11 @@ void load_weights(network *net, char *filename)
 // load network & force - set batch size
 network *load_network_custom(char *cfg, char *weights, int clear, int batch)
 {
-    printf(" Try to load cfg: %s, weights: %s, clear = %d \n", cfg, weights, clear);
+    // printf(" Try to load cfg: %s, weights: %s, clear = %d \n", cfg, weights, clear);
     network* net = (network*)xcalloc(1, sizeof(network));
     *net = parse_network_cfg_custom(cfg, batch, 1);
     if (weights && weights[0] != 0) {
-        printf(" Try to load weights: %s \n", weights);
+        // printf(" Try to load weights: %s \n", weights);
         load_weights(net, weights);
     }
     fuse_conv_batchnorm(*net);
@@ -2396,11 +2396,11 @@ network *load_network_custom(char *cfg, char *weights, int clear, int batch)
 // load network & get batch size from cfg-file
 network *load_network(char *cfg, char *weights, int clear)
 {
-    printf(" Try to load cfg: %s, clear = %d \n", cfg, clear);
+    // printf(" Try to load cfg: %s, clear = %d \n", cfg, clear);
     network* net = (network*)xcalloc(1, sizeof(network));
     *net = parse_network_cfg(cfg);
     if (weights && weights[0] != 0) {
-        printf(" Try to load weights: %s \n", weights);
+        // printf(" Try to load weights: %s \n", weights);
         load_weights(net, weights);
     }
     if (clear) {
